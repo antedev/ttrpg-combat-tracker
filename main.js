@@ -1,4 +1,21 @@
+const combatants = [];
 let selectedCombatantIndex = null;
+
+document.getElementById('combatant-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const initiative = document.getElementById('initiative').value;
+    const maxHp = document.getElementById('max-hp').value;
+    const currentHp = document.getElementById('current-hp').value;
+    const effects = document.getElementById('effects').value;
+    const isPlayer = document.getElementById('is-player').checked;
+
+    addCombatant(name, initiative, maxHp, currentHp, effects, isPlayer);
+    renderCombatants();
+
+    clearForm();
+});
 
 function addCombatant(name, initiative, maxHp, currentHp, effects, isPlayer) {
     const combatant = {
@@ -17,11 +34,23 @@ function addCombatant(name, initiative, maxHp, currentHp, effects, isPlayer) {
         selectedCombatantIndex = null;
     }
 
-    // Sort and render logic remains the same
+    sortCombatants();
+}
+
+function sortCombatants() {
+    // Sort combatants by initiative (descending) and prioritize players in case of ties
+    combatants.sort((a, b) => {
+        if (a.initiative === b.initiative) {
+            return b.isPlayer - a.isPlayer;
+        }
+        return b.initiative - a.initiative;
+    });
+
+    renderCombatants();
 }
 
 function renderCombatants() {
-    // Clear the list before re-rendering
+    const combatantList = document.getElementById('combatant-list');
     combatantList.innerHTML = '';
 
     combatants.forEach((combatant, index) => {
@@ -50,4 +79,8 @@ function editCombatant(index) {
     document.getElementById('current-hp').value = combatant.currentHp;
     document.getElementById('effects').value = combatant.effects;
     document.getElementById('is-player').checked = combatant.isPlayer;
+}
+
+function clearForm() {
+    document.getElementById('combatant-form').reset();
 }
