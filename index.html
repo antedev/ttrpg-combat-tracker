@@ -16,8 +16,31 @@
             <h1 class="text-center my-3">TTRPG Combat Order Manager</h1>
         </header>
         <main>
-            <!-- Add your UI components here -->
-        </main>
+    		<form id="combatant-form" class="mb-3">
+			<div class="row">
+	            <div class="col-md-3">
+      	          <label for="name" class="form-label">Name</label>
+            	    <input type="text" class="form-control" id="name" placeholder="Character/Monster name">
+	            </div>
+	            <div class="col-md-2">
+	                <label for="initiative" class="form-label">Initiative</label>
+	                <input type="number" class="form-control" id="initiative" placeholder="Initiative">
+	            </div>
+	           <div class="col-md-2">
+      	         <label for="max-hp" class="form-label">Max HP</label>
+            	   <input type="number" class="form-control" id="max-hp" placeholder="Max HP">
+	           </div>
+	           <div class="col-md-3">
+	               <label for="effects" class="form-label">Ongoing Effects</label>
+	               <input type="text" class="form-control" id="effects" placeholder="Ongoing effects">
+	           </div>
+	           <div class="col-md-2 d-flex align-items-end">
+	               <button type="submit" class="btn">Add Combatant</button>
+	           </div>
+	       </div>
+	   </form>
+	   <ul id="combatant-list" class="list-group mb-3"></ul>
+	/main>
     </div>
     <!-- Add Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-0YfrJtyPszgpgPjJ8EaleurNt2QGRt7DZ5L5/Jr59b6EGGoajH7l9z9lUv7Bgt+/g==" crossorigin="anonymous"></script>
