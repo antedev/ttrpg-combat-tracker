@@ -1,57 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TTRPG Combat Order Manager</title>
-    <!-- Add Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e3wS2tvTulisdb5J4g" crossorigin="anonymous">
-    <!-- Add custom CSS file -->
+    <title>Initiative Tracker</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
 </head>
+
 <body>
     <div class="container">
-        <header>
-            <h1 class="text-center my-3">TTRPG Combat Order Manager</h1>
-        </header>
-        <main>
-    		<form id="combatant-form" class="mb-3">
-			<div class="row">
-	            <div class="col-md-3">
-      	          <label for="name" class="form-label">Name</label>
-            	    <input type="text" class="form-control" id="name" placeholder="Character/Monster name">
-	            </div>
-	            <div class="col-md-2">
-	                <label for="initiative" class="form-label">Initiative</label>
-	                <input type="number" class="form-control" id="initiative" placeholder="Initiative">
-	            </div>
-	           <div class="col-md-2">
-      	         <label for="max-hp" class="form-label">Max HP</label>
-            	   <input type="number" class="form-control" id="max-hp" placeholder="Max HP">
-	           </div>
-	           <div class="col-md-3">
-	               <label for="effects" class="form-label">Ongoing Effects</label>
-	               <input type="text" class="form-control" id="effects" placeholder="Ongoing effects">
-	           </div>
-	           <div class="col-md-2 d-flex align-items-end">
-	               <button type="submit" class="btn">Add Combatant</button>
-	           </div>
-		     <div class="col-md-3">
-			   <div class="form-check form-switch">
-        			<input class="form-check-input" type="checkbox" id="is-player">
- 				<label class="form-check-label" for="is-player">Player</label>
-			   </div>
-	          </div>
-	   </form>
-	   <ul id="combatant-list" class="list-group mb-3"></ul>
-
-	</main>
+        <h1 class="text-center mt-5 mb-4">Initiative Tracker</h1>
+        <form id="combatant-form" class="row g-3 mb-5">
+            <div class="col-md-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Name">
+            </div>
+            <div class="col-md-2">
+                <label for="initiative" class="form-label">Initiative</label>
+                <input type="number" class="form-control" id="initiative" placeholder="Initiative">
+            </div>
+            <div class="col-md-2">
+                <label for="max-hp" class="form-label">Max HP</label>
+                <input type="number" class="form-control" id="max-hp" placeholder="Max HP">
+            </div>
+            <div class="col-md-2">
+                <label for="current-hp" class="form-label">Current HP</label>
+                <input type="number" class="form-control" id="current-hp" placeholder="Current HP">
+            </div>
+            <div class="col-md-3">
+                <label for="effects" class="form-label">Effects</label>
+                <input type="text" class="form-control" id="effects" placeholder="Effects">
+            </div>
+            <div class="col-md-3">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="is-player">
+                    <label class="form-check-label" for="is-player">Player</label>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
+                <button type="submit" class="btn">Add/Update</button>
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
+                <button type="button" class="btn" onclick="sortCombatants()">Sort</button>
+            </div>
+        </form>
+        <h2 class="text-center mb-4">Combatants</h2>
+        <ul id="combatant-list" class="list-group">
+            <!-- Combatants will be rendered here -->
+        </ul>
     </div>
-    <!-- Add Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-0YfrJtyPszgpgPjJ8EaleurNt2QGRt7DZ5L5/Jr59b6EGGoajH7l9z9lUv7Bgt+/g==" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-    <!-- Add your custom JavaScript file -->
-    <script src="main.js"></script>
 </body>
+
 </html>
