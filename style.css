@@ -1,0 +1,41 @@
+/* Import Google Font for fantasy vibe */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+/* Set default font and background color */
+body {
+  font-family: 'Cinzel', serif;
+  background-color: #f4f1ea;
+  color: #333;
+}
+
+/* Style the header */
+header {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Style the main container */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Style for buttons */
+button {
+  background-color: #755f4f;
+  color: #f4f1ea;
+  border: none;
+  font-family: 'Cinzel', serif;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #5d483c;
+  color: #f4f1ea;
+}
+
+/* Additional custom styles for UI components can be added here */
